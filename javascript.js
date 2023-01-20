@@ -92,5 +92,5 @@ function operate() {
 
     }
 
-    return result;
+    return Math.round(result*100)/100;
 }
