@@ -51,7 +51,7 @@ body {
   padding: 1vh;
   box-sizing: border-box;
   font-family: "Digital Numbers Regular";
-  font-size: 4Svh;
+  font-size: 4vh;
   color: #535850;
   display: flex;
   align-items: center;
@@ -90,8 +90,14 @@ body {
 }
 
 .btn-calc:hover {
-  background-color: #a9aab9;
-  box-shadow: inset -3px -3px 3px #838596, 2px 2px 2px #5a2c42;
+  background-color: rgb(199, 179, 188);
+  box-shadow: inset -3px -3px 3px rgb(160, 131, 145), 2px 2px 2px #5a2c42;
+}
+
+.btn-calc:active {
+  background-color: #703f57;
+  color: #e4e5f0;
+  box-shadow: inset -3px -3px 3px #5a2c42, 2px 2px 2px #5a2c42;
 }
 
 .btn-special {
@@ -101,6 +107,11 @@ body {
 }
 
 .btn-special:hover {
+  background-color: #9b7b50;
+  box-shadow: inset -3px -3px 3px #755831, 2px 2px 2px #5a2c42;
+}
+
+.btn-special:active {
   background-color: #99631c;
   box-shadow: inset -3px -3px 3px #6e430b, 2px 2px 2px #5a2c42;
 }

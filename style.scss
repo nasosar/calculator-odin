@@ -68,7 +68,7 @@ body {
     padding: 1vh;
     box-sizing: border-box;
     font-family: 'Digital Numbers Regular';
-    font-size: 4Svh;
+    font-size: 4vh;
     color: $textColorTwo;
     display: flex;
     align-items: center;
@@ -108,8 +108,15 @@ body {
 
 
 .btn-calc:hover {
-    background-color: $btnsShadow;
-    box-shadow: inset -3px -3px 3px #838596, 2px 2px 2px $calcShadow;
+    background-color: rgb(199, 179, 188);
+    box-shadow: inset -3px -3px 3px rgb(160, 131, 145), 2px 2px 2px $calcShadow;
+
+}
+
+.btn-calc:active {
+    background-color: $textColor;
+    color: $btnsColor;
+    box-shadow: inset -3px -3px 3px $calcShadow, 2px 2px 2px $calcShadow;
 
 }
 
@@ -120,9 +127,15 @@ body {
 }
 
 .btn-special:hover{
+    background-color: #9b7b50;
+    box-shadow: inset -3px -3px 3px #755831, 2px 2px 2px $calcShadow;
+}
+
+.btn-special:active{
     background-color: $btnsSpecialShadow;
     box-shadow: inset -3px -3px 3px #6e430b, 2px 2px 2px $calcShadow;
 }
+
 
 
 .footer {
