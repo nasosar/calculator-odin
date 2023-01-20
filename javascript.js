@@ -69,28 +69,28 @@ function operate() {
         case (display.innerText.includes('+')):
             justNumbersArr = operateArray.join('').split('+');
             [x, y] = justNumbersArr;
-            result = (x*1 + y*1);
+            result = Math.round((x*1 + y*1)*100)/100;
         break;
 
         case (display.innerText.includes('-')):
             justNumbersArr = operateArray.join('').split('-');
             [x, y] = justNumbersArr;
-            result = (x*1 - y*1);
+            result = Math.round((x*1 - y*1)*100)/100;
         break;
 
         case (display.innerText.includes('*')):
             justNumbersArr = operateArray.join('').split('*');
             [x, y] = justNumbersArr;
-            result = (x*1 * y*1);
+            result = Math.round((x*1 * y*1)*100)/100;
         break;
         
         case (display.innerText.includes('/')):
             justNumbersArr = operateArray.join('').split('/');
             [x, y] = justNumbersArr;
-            result = (x*1 / y*1);
+            result = Math.round((x*1 / y*1)*100)/100;
         break;
 
     }
 
-    return Math.round(result*100)/100;
+    return result;
 }
