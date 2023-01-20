@@ -95,13 +95,16 @@ body {
     border-radius: 4px;
     border: none;
     height: 90%;
-    aspect-ratio: 1;
+    aspect-ratio: 5/4;
     color: $textColor;
     font-family: 'Kanit', sans-serif;
     font-size: 3vh;
-    font-weight: 500;
+    font-weight: 400;
 }
 
+#bntAC{
+    aspect-ratio: 8/3;
+}
 .btn-calc:hover {
     background-color: $btnsShadow;
     box-shadow: inset -3px -3px 3px #838596, 2px 2px 2px $calcShadow;
