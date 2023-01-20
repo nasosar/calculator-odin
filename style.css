@@ -72,6 +72,10 @@ body {
   align-items: center;
 }
 
+#bntTOP {
+  aspect-ratio: 8/3;
+}
+
 .btn-calc {
   background-color: #e4e5f0;
   box-shadow: inset -3px -3px 3px #a9aab9, 2px 2px 2px #5a2c42;
@@ -83,10 +87,6 @@ body {
   font-family: "Kanit", sans-serif;
   font-size: 3vh;
   font-weight: 400;
-}
-
-#bntAC {
-  aspect-ratio: 8/3;
 }
 
 .btn-calc:hover {

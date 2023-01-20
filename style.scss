@@ -89,6 +89,10 @@ body {
     align-items: center;
 }
 
+#bntTOP {
+    aspect-ratio: 8/3;
+}
+
 .btn-calc {
     background-color: $btnsColor;
     box-shadow: inset -3px -3px 3px $btnsShadow, 2px 2px 2px $calcShadow;
@@ -102,9 +106,7 @@ body {
     font-weight: 400;
 }
 
-#bntAC{
-    aspect-ratio: 8/3;
-}
+
 .btn-calc:hover {
     background-color: $btnsShadow;
     box-shadow: inset -3px -3px 3px #838596, 2px 2px 2px $calcShadow;

@@ -1,13 +1,5 @@
-/* PSEUDOCODE:
-- when a number is pressed, display store first number
-- when operator is pressed, select operator and make button highlighted
-- when second number is pressed, display store second number
-- when '=' is pressed, make number-operator-number and show result in display
-- if user enters 0/0, display "that ain't it, sis"
-- when 'clear' is pressed, show 0 on screen*/
 
-
-// Make calcs long shadow
+// Make the calculator body have a long shadow
 
 let calcBody = document.querySelector('.calcshadow');
 let calcShadow = '';
@@ -18,82 +10,87 @@ for (let i = 0; i < 500; i++) {
 
 calcBody.style.boxShadow = calcShadow;
 
-// Basic math functions
-let inputOne = '';
-let inputTwo = '';
-let operatorMode = '';
-let result = 0;
-let onDisplay = '';
+// Calculator functionality 
 
-btn-number
+let result = '';
+
+let display = document.getElementById('display');
+
+let operateArray = '';
+
+let justNumbersArr ='';
+
+let [x, y] = ''
+
+let buttons = Array.from(document.getElementsByClassName('btn-calc'));
+
+buttons.map( button => {
+    button.addEventListener('click', (e) => {
+        switch(e.target.innerText){
+            case 'AC':
+                display.innerText = '';
+                break;
+
+            case 'DEL':
+                if(display.innerText) {
+                    display.innerText = display.innerText.slice(0, -1);
+                }
+                break;  
+
+            case '=':
+                display.innerText = operate();
+                break;
+
+            case '*':
+            case '/':
+            case '+':
+            case '-':    
+                if (display.innerText.includes('*', '/', '-', '+') || display.innerText.includes('/') ||display.innerText.includes('-') ||display.innerText.includes('+')) {
+                    display.innerText = operate();                    
+                };
+                display.innerText += e.target.innerText;
+                break;
+
+            default:
+                display.innerText += e.target.innerText;    
+        }
+    })
+})
+
 
 function operate() {
-    if (operatorMode === "add") {
-        result = (inputOne + inputTwo);
-    } else if (operatorMode === "substract") {
-        result = (inputOne - inputTwo); 
-    } else if (operatorMode === "multiply") {
-        result = (inputOne * inputTwo); 
-    } else {
-        result = (inputOne / inputTwo);
-    };
+    operateArray = Array.from(display.innerText);
 
-    return result;
-}
+    switch(true) {
+        case (display.innerText == '0/0'):
+            result = "NOT TODAY SATAN";
+        break;
 
-document.querySelector('#bntPlus').onclick = e => {
-    operatorMode = 'add';
-    console.log(operatorMode);
-}
+        case (display.innerText.includes('+')):
+            justNumbersArr = operateArray.join('').split('+');
+            [x, y] = justNumbersArr;
+            result = (x*1 + y*1);
+        break;
 
-document.querySelector('#bntMinus').onclick = e => {
-    operatorMode = 'substract';
-    console.log(operatorMode);
-}
+        case (display.innerText.includes('-')):
+            justNumbersArr = operateArray.join('').split('-');
+            [x, y] = justNumbersArr;
+            result = (x*1 - y*1);
+        break;
 
-document.querySelector('#bntMultiply').onclick = e => {
-    operatorMode = 'multiply';
-    console.log(operatorMode);
-}
+        case (display.innerText.includes('*')):
+            justNumbersArr = operateArray.join('').split('*');
+            [x, y] = justNumbersArr;
+            result = (x*1 * y*1);
+        break;
+        
+        case (display.innerText.includes('/')):
+            justNumbersArr = operateArray.join('').split('/');
+            [x, y] = justNumbersArr;
+            result = (x*1 / y*1);
+        break;
 
-document.querySelector('#bntDivide').onclick = e => {
-    operatorMode = 'divide';
-    console.log(operatorMode);
-}
-
-document.querySelector('#bntEqual').onclick = e => {
-    operate();
-    console.log(result);
-    onDisplay = document.querySelector('#display').innerHTML = result;
-}
-
-
-
-
-
-
-
-
-function add(x, y) {
-    result = (x+y)
-
-    return result;
-}
-
-function substract(x, y) {
-    result = (x-y)
-
-    return result;
-}
-
-function multiply(x, y) {
-    result = (x*y)
-
-    return result;
-}
-
-function divide(x, y) {
-    result = (x/y)
+    }
 
     return result;
 }
